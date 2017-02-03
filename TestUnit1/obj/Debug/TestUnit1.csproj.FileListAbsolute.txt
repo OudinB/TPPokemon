@@ -1,0 +1,13 @@
+C:\Users\kidusautie\Desktop\TPPokemon-master\TestUnit1\bin\Debug\TestUnit1.dll
+C:\Users\kidusautie\Desktop\TPPokemon-master\TestUnit1\bin\Debug\TestUnit1.pdb
+C:\Users\kidusautie\Desktop\TPPokemon-master\TestUnit1\bin\Debug\BusinessLayer.dll
+C:\Users\kidusautie\Desktop\TPPokemon-master\TestUnit1\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Users\kidusautie\Desktop\TPPokemon-master\TestUnit1\bin\Debug\StubDataAccessLayer.dll
+C:\Users\kidusautie\Desktop\TPPokemon-master\TestUnit1\bin\Debug\EntitiesLayer.dll
+C:\Users\kidusautie\Desktop\TPPokemon-master\TestUnit1\bin\Debug\BusinessLayer.pdb
+C:\Users\kidusautie\Desktop\TPPokemon-master\TestUnit1\bin\Debug\StubDataAccessLayer.pdb
+C:\Users\kidusautie\Desktop\TPPokemon-master\TestUnit1\bin\Debug\EntitiesLayer.pdb
+C:\Users\kidusautie\Desktop\TPPokemon-master\TestUnit1\bin\Debug\fr\Microsoft.VisualStudio.QualityTools.UnitTestFramework.resources.dll
+C:\Users\kidusautie\Desktop\TPPokemon-master\TestUnit1\obj\Debug\TestUnit1.csprojResolveAssemblyReference.cache
+C:\Users\kidusautie\Desktop\TPPokemon-master\TestUnit1\obj\Debug\TestUnit1.dll
+C:\Users\kidusautie\Desktop\TPPokemon-master\TestUnit1\obj\Debug\TestUnit1.pdb
