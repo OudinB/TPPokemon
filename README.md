@@ -3,7 +3,7 @@
 BDD - Benjamin
 Gestion Stade - Jo
 Impression - Jo
-Gestion Tournois -  
+Gestion Tournois - Mo 
 Gestion Login - Mo
 Rapport écrit - Killian
 
