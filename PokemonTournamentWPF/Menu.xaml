@@ -39,7 +39,7 @@
                         <GradientStop Color="White" Offset="1"/>
                     </LinearGradientBrush>
                 </TabItem.Background>
-                <ListView x:Name="ListViewPokemon" HorizontalContentAlignment="Center" ItemsSource="{Binding}" HorizontalAlignment="Left" VerticalAlignment="Top" Height="154" Width="612">
+                <ListView x:Name="ListViewPokemon" MouseDoubleClick="Detail_Pokemon_Click" HorizontalContentAlignment="Center" ItemsSource="{Binding}" HorizontalAlignment="Left" VerticalAlignment="Top" Height="154" Width="612" >
                     <ListView.View>
                         <GridView>
                             <GridViewColumn Header="ID"  Width="Auto" DisplayMemberBinding="{Binding Path=ID}"/>
@@ -100,7 +100,7 @@
                     </ListView.View>
                 </ListView>
             </TabItem>
-            <TabItem x:Name="Caracteristiques" Header="Caractéristiques" Foreground="Red" FontFamily="Cooper Black" FontSize="14">
+            <TabItem x:Name="Tournois" Header="Tournois" Foreground="Red" FontFamily="Cooper Black" FontSize="14">
                 <TabItem.Background>
                     <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
                         <GradientStop Color="#FFF3F3F3" Offset="0"/>
@@ -109,6 +109,14 @@
                         <GradientStop Color="White" Offset="1"/>
                     </LinearGradientBrush>
                 </TabItem.Background>
+                <ListView x:Name="ListViewTournois" MouseDoubleClick="Detail_Tournoi_Click" ItemsSource="{Binding}" HorizontalAlignment="Left" VerticalAlignment="Top" Height="154" Width="612">
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn Header="Nom" Width="Auto"  DisplayMemberBinding="{Binding Path=Nom}"/>
+                            <GridViewColumn Header="Nombre de Matchs" Width="Auto"  DisplayMemberBinding="{Binding Path=nbrMatch}"/>
+                        </GridView>
+                    </ListView.View>
+                </ListView>
             </TabItem>
             <TabItem x:Name="Bonus" Header="Bonus" Foreground="Red" FontFamily="Cooper Black" FontSize="14">
                 <TabItem.Background>

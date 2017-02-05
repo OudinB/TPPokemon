@@ -53,13 +53,16 @@ namespace PokemonTournamentWPF
                 Supprimer.Visibility = Visibility.Collapsed;
                 Exporter.Visibility = Visibility.Collapsed;
             }
-                
+
 
             if (Stades.IsSelected)
                 ListViewStades.ItemsSource = BManager.getStade();
 
             if (Matchs.IsSelected)
                 ListViewMatchs.ItemsSource = BManager.getMatch();
+
+            if (Tournois.IsSelected)
+                ListViewTournois.ItemsSource = BManager.getTournoi();
         }
 
         private void addPokemon_Click(object sender, RoutedEventArgs e)
@@ -74,14 +77,14 @@ namespace PokemonTournamentWPF
             if (ListViewPokemon.SelectedItem != null)
             {
                 if (MessageBox.Show("Confirmer la suppression ?", "Confirmer", MessageBoxButton.OKCancel) == MessageBoxResult.OK)
-                    foreach(Pokemon p in ListViewPokemon.SelectedItems)
+                    foreach (Pokemon p in ListViewPokemon.SelectedItems)
                     {
                         BManager.getPokemon().Remove(p);
                     }
 
                 ListViewPokemon.ItemsSource = null;
-                ListViewPokemon.ItemsSource = BManager.getPokemon();                
-            }   
+                ListViewPokemon.ItemsSource = BManager.getPokemon();
+            }
         }
 
         private void Exporter_Click(object sender, RoutedEventArgs e)
@@ -130,5 +133,30 @@ namespace PokemonTournamentWPF
                 ListViewPokemon.ItemsSource = BManager.getPokemon();
             }
         }
+        //fonction ajoutée , reference dans la balise Liste view ligne 42 dans Menu.xaml
+        private void Detail_Pokemon_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                EntitiesLayer.Pokemon item =(Pokemon)ListViewPokemon.SelectedItems[0];
+                PokeWindow win = new PokeWindow(item);
+                win.Show();
+               // this.Close();
+            }
+            catch { }
+        }
+        private void Detail_Tournoi_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                EntitiesLayer.Tournoi item = (Tournoi)ListViewTournois.SelectedItems[0];
+                TournoiWindow win = new TournoiWindow(item);
+                win.Show();
+                this.Close();
+            }
+            catch { }
+        }
+
     }
+
 }
