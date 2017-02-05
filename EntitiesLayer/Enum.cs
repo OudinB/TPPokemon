@@ -6,9 +6,10 @@ using System.Threading.Tasks;
 
 namespace EntitiesLayer {
 	public enum ETypeElement {
-		Eau, Feu, Plante, Roche, Sol, Insecte, Electrique, Glace, Psy, 
+        Plante, Feu, Eau, Electrique, Roche, Glace, Sol, Insecte, Psy, Spectre 
 	}
 	public enum EPhaseTournoi {
         HuitiemeFinale, QuartFinale, DemiFinale, Finale
 	}
+    
 }

@@ -20,12 +20,28 @@ namespace BusinessLayer
             return Manager.LsPokemon;
         }
 
+
+        public Pokemon getPokemonByName(string login)
+        {
+            return Manager.getPokemonByName(login);
+        }
+        public Pokemon getPokemonByID(int id)
+        {
+            return Manager.getPokemonByID(id);
+        }
+
+
         public List<Stade> getStade() {
                 return Manager.LsStade;
         }
 
-        public List<Match> getMatch() {
+        public List<Match> getMatch()
+        {
             return Manager.LsMatch;
+        }
+        public List<Tournoi> getTournoi()
+        {
+            return Manager.LsTournoi;
         }
 
         public List<String> getPokemonByElem(ETypeElement elem) {
