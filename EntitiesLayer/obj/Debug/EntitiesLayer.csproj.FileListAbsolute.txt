@@ -13,3 +13,8 @@ C:\Users\Jo\Desktop\TPReseau\projet\PokemonTournamentConsole\EntitiesLayer\bin\D
 C:\Users\Jo\Desktop\TPReseau\projet\PokemonTournamentConsole\EntitiesLayer\obj\Debug\EntitiesLayer.csprojResolveAssemblyReference.cache
 C:\Users\Jo\Desktop\TPReseau\projet\PokemonTournamentConsole\EntitiesLayer\obj\Debug\EntitiesLayer.dll
 C:\Users\Jo\Desktop\TPReseau\projet\PokemonTournamentConsole\EntitiesLayer\obj\Debug\EntitiesLayer.pdb
+C:\Users\moham\TPPokemon-master\EntitiesLayer\bin\Debug\EntitiesLayer.dll
+C:\Users\moham\TPPokemon-master\EntitiesLayer\bin\Debug\EntitiesLayer.pdb
+C:\Users\moham\TPPokemon-master\EntitiesLayer\obj\Debug\EntitiesLayer.csprojResolveAssemblyReference.cache
+C:\Users\moham\TPPokemon-master\EntitiesLayer\obj\Debug\EntitiesLayer.dll
+C:\Users\moham\TPPokemon-master\EntitiesLayer\obj\Debug\EntitiesLayer.pdb

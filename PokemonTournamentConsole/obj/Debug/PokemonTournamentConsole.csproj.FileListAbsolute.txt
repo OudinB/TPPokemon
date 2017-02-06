@@ -31,3 +31,5 @@ C:\Users\Jo\Desktop\TPReseau\projet\PokemonTournamentConsole\PokemonTournamentCo
 C:\Users\Jo\Desktop\TPReseau\projet\PokemonTournamentConsole\PokemonTournamentConsole\bin\Debug\BusinessLayer.pdb
 C:\Users\Jo\Desktop\TPReseau\projet\PokemonTournamentConsole\PokemonTournamentConsole\bin\Debug\EntitiesLayer.pdb
 C:\Users\Jo\Desktop\TPReseau\projet\PokemonTournamentConsole\PokemonTournamentConsole\bin\Debug\StubDataAccessLayer.pdb
+C:\Users\moham\TPPokemon-master\PokemonTournamentConsole\obj\Debug\PokemonTournamentConsole.exe
+C:\Users\moham\TPPokemon-master\PokemonTournamentConsole\obj\Debug\PokemonTournamentConsole.pdb

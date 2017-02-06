@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\Jo\Desktop\TPReseau\projet\PokemonTournamentConsole\PokemonTournamentWPF\obj\Debug\
+C:\Users\moham\TPPokemon-master\PokemonTournamentWPF\obj\Debug\
 PokemonTournamentWPF
 none
 false
 DEBUG;TRACE
-C:\Users\Jo\Desktop\TPReseau\projet\PokemonTournamentConsole\PokemonTournamentWPF\App.xaml
-3199462409
+C:\Users\moham\TPPokemon-master\PokemonTournamentWPF\App.xaml
+5-1528425528
 
-7-1692455487
-15680697389
-AddPokemon.xaml;MainWindow.xaml;Menu.xaml;
+9-763493767
+15-676666320
+AddPokemon.xaml;MainWindow.xaml;Menu.xaml;PokeWindow.xaml;TournoiWindow.xaml;
 
 False
 
