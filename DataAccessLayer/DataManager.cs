@@ -277,7 +277,7 @@ namespace DataAccessLayer
 
                     foreach (DataRow row in getData.Rows)
                     {
-                        _lsMatch.Add(new Match((int)row.ItemArray[0], (int)row.ItemArray[1], getPokemonByID((int)row.ItemArray[2]), getPokemonByID((int)row.ItemArray[3]), (Stade)row.ItemArray[4], (int)row.ItemArray[5], (EPhaseTournoi)row.ItemArray[1]));
+                        _lsMatch.Add(new Match((int)row.ItemArray[0], (int)row.ItemArray[1], getPokemonByID((int)row.ItemArray[3]), getPokemonByID((int)row.ItemArray[4]), (Stade)row.ItemArray[5], (int)row.ItemArray[6], (EPhaseTournoi)row.ItemArray[2]));
                     }
                 }
                 return _lsMatch;
@@ -285,22 +285,30 @@ namespace DataAccessLayer
             set
             {
                 int i = 0;
+
                 DataTable setData = new DataTable();
-                DataColumn dc = new DataColumn("IdPokemonVain", typeof(int));
+                DataColumn dc = new DataColumn("IdMatch", typeof(int));
                 setData.Columns.Add(dc);
-                dc = new DataColumn("NomDresseur", typeof(string));
+                dc = new DataColumn("IdPokemonVainqueur", typeof(int));
                 setData.Columns.Add(dc);
-                dc = new DataColumn("Score", typeof(int));
+                dc = new DataColumn("IdPokemon1", typeof(int));
+                setData.Columns.Add(dc);
+                dc = new DataColumn("IdPokemon2", typeof(int));
+                setData.Columns.Add(dc);
+                dc = new DataColumn("IdStade", typeof(int));
+                setData.Columns.Add(dc);
+                dc = new DataColumn("IdTournoi", typeof(int));
                 setData.Columns.Add(dc);
                 foreach (Match tmp in value)
                 {
                     DataRow dr = setData.NewRow();
                     dr[0] = tmp.ID;
-                    dr[1] = tmp.PhaseTournoi;
-                    dr[2] = tmp.Pokemon1.ID;
-                    dr[3] = tmp.Pokemon2.ID;
-                    dr[4] = tmp.Arene.ID;
-                    dr[5] = tmp.IdTournoi;
+                    dr[1] = tmp.IdPokemonVainqueur;
+                    dr[2] = tmp.PhaseTournoi;
+                    dr[3] = tmp.Pokemon1.ID;
+                    dr[4] = tmp.Pokemon2.ID;
+                    dr[5] = tmp.Arene.ID;
+                    dr[6] = tmp.IdTournoi;
                     ++i;
                 }
 
@@ -352,17 +360,34 @@ namespace DataAccessLayer
             set
             {
                 int i = 0;
+
                 DataTable setData = new DataTable();
+                DataColumn dc = new DataColumn("IdStade", typeof(int));
+                setData.Columns.Add(dc);
+                dc = new DataColumn("NomStade", typeof(string));
+                setData.Columns.Add(dc);
+                dc = new DataColumn("NbPlaces", typeof(int));
+                setData.Columns.Add(dc);
+                dc = new DataColumn("Vie", typeof(int));
+                setData.Columns.Add(dc);
+                dc = new DataColumn("Force", typeof(int));
+                setData.Columns.Add(dc);
+                dc = new DataColumn("Agilite", typeof(int));
+                setData.Columns.Add(dc);
+                dc = new DataColumn("ENDURANCE", typeof(int));
+                setData.Columns.Add(dc);
+                dc = new DataColumn("VITESSE", typeof(int));
+                setData.Columns.Add(dc);
                 foreach (Stade tmp in value)
                 {
-                    setData.Rows[i].ItemArray[0] = tmp.ID;
-                    setData.Rows[i].ItemArray[1] = tmp.Nom;
-                    setData.Rows[i].ItemArray[2] = tmp.NbPlaces;
-                    setData.Rows[i].ItemArray[3] = tmp.carac.Vie;
-                    setData.Rows[i].ItemArray[4] = tmp.carac.Force;
-                    setData.Rows[i].ItemArray[5] = tmp.carac.Esquive;
-                    setData.Rows[i].ItemArray[6] = tmp.carac.Endurance;
-                    setData.Rows[i].ItemArray[7] = tmp.carac.Vitesse;
+                    DataRow dr = setData.NewRow();
+                    dr[0] = tmp.ID;
+                    dr[1] = tmp.Nom;
+                    dr[2] = tmp.NbPlaces;
+                    dr[3] = tmp.carac.Vie;
+                    dr[4] = tmp.carac.Force;
+                    dr[5] = tmp.carac.Esquive;
+                    dr[6] = tmp.carac.Vitesse;
                     ++i;
                 }
 
@@ -418,11 +443,18 @@ namespace DataAccessLayer
             {
                 int i = 0;
                 DataTable setData = new DataTable();
+                DataColumn dc = new DataColumn("IdTournoi", typeof(int));
+                setData.Columns.Add(dc);
+                dc = new DataColumn("NomTournoi", typeof(string));
+                setData.Columns.Add(dc);
+                dc = new DataColumn("NbMatchs", typeof(int));
+                setData.Columns.Add(dc);
                 foreach (Tournoi tmp in value)
                 {
-                    setData.Rows[i].ItemArray[0] = tmp.ID;
-                    setData.Rows[i].ItemArray[1] = tmp.Nom;
-                    setData.Rows[i].ItemArray[2] = tmp.nbrMatch;
+                    DataRow dr = setData.NewRow();
+                    dr[0] = tmp.ID;
+                    dr[1] = tmp.Nom;
+                    dr[2] = tmp.nbrMatch;
                     ++i;
                 }
 
@@ -474,13 +506,24 @@ namespace DataAccessLayer
             {
                 int i = 0;
                 DataTable setData = new DataTable();
+                DataColumn dc = new DataColumn("IdUtilisateur", typeof(int));
+                setData.Columns.Add(dc);
+                dc = new DataColumn("NomUtilisateur", typeof(string));
+                setData.Columns.Add(dc);
+                dc = new DataColumn("PrenomUtilisateur", typeof(string));
+                setData.Columns.Add(dc);
+                dc = new DataColumn("LoginUtilisateur", typeof(string));
+                setData.Columns.Add(dc);
+                dc = new DataColumn("Password", typeof(string));
+                setData.Columns.Add(dc);
                 foreach (Utilisateur tmp in value)
                 {
-                    setData.Rows[i].ItemArray[0] = tmp.ID;
-                    setData.Rows[i].ItemArray[1] = tmp.Nom;
-                    setData.Rows[i].ItemArray[2] = tmp.Prenom;
-                    setData.Rows[i].ItemArray[3] = tmp.Login;
-                    setData.Rows[i].ItemArray[4] = tmp.Password;
+                    DataRow dr = setData.NewRow();
+                    dr[0] = tmp.ID;
+                    dr[1] = tmp.Nom;
+                    dr[2] = tmp.Prenom;
+                    dr[3] = tmp.Login;
+                    dr[4] = tmp.Password;
                     ++i;
                 }
 

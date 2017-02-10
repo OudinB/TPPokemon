@@ -54,9 +54,9 @@ CREATE TABLE [dbo].[STADE] (
 );
 
 CREATE TABLE [dbo].[TOURNOI] (
-    [IdTournoi] INT           NOT NULL,
-    [NomStade]  VARCHAR (225) NOT NULL,
-    [NbMatchs]  INT	      DEFAULT ((0)) NOT NULL,
+    [IdTournoi] 	INT           NOT NULL,
+    [NomTournoi]  	VARCHAR (225) NOT NULL,
+    [NbMatchs]  	INT	      DEFAULT ((0)) NOT NULL,
     PRIMARY KEY CLUSTERED ([IdTournoi] ASC)
 );
 
