@@ -40,6 +40,8 @@ namespace PokemonTournamentConsole {
             Console.WriteLine(b.ToString());
 
             b.updateTable(b.LsPokemon);
+            b.selectTable(b.LsPokemon);
+            Console.WriteLine(b.ToString());
             b.ToXML("C:\\Users\\Benjamin\\git\\TPPokemon\\toto.xml");
 
             Console.ReadKey();

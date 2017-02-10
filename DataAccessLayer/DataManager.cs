@@ -137,24 +137,9 @@ namespace DataAccessLayer
             set
             {
                 int i = 0;
-
-                DataTable setData = new DataTable();
-                DataColumn dc = new DataColumn("IdPokemon", typeof(int));
-                setData.Columns.Add(dc);
-                dc = new DataColumn("NomPokemon", typeof(string));
-                setData.Columns.Add(dc);
-                dc = new DataColumn("IdType", typeof(int));
-                setData.Columns.Add(dc);
-                dc = new DataColumn("Vie", typeof(int));
-                setData.Columns.Add(dc);
-                dc = new DataColumn("Force", typeof(int));
-                setData.Columns.Add(dc);
-                dc = new DataColumn("Agilite", typeof(int));
-                setData.Columns.Add(dc);
-                dc = new DataColumn("ENDURANCE", typeof(int));
-                setData.Columns.Add(dc);
-                dc = new DataColumn("VITESSE", typeof(int));
-                setData.Columns.Add(dc);
+                DataTable setData = SelectByDataAdapter("SELECT * FROM POKEMON;");
+                foreach (DataRow dr in setData.Rows)
+                    dr.Delete();
 
                 foreach (Pokemon tmp in value)
                 {
@@ -172,11 +157,7 @@ namespace DataAccessLayer
 
                     setData.Rows.Add(dr);
                 }
-
-                if (UpdateByCommandBuilder("SELECT * FROM POKEMON", new DataTable()) == 0)
-                {
-                    
-                }
+                UpdateByCommandBuilder("SELECT * FROM POKEMON", setData);
             }
         }
         public List<Pokemon> selectTable(List<Pokemon> value)
@@ -220,14 +201,10 @@ namespace DataAccessLayer
             set
             {
                 int i = 0;
+                DataTable setData = SelectByDataAdapter("SELECT * FROM DRESSEUR;");
+                foreach (DataRow dr in setData.Rows)
+                    dr.Delete();
 
-                DataTable setData = new DataTable();
-                DataColumn dc = new DataColumn("IdDresseur", typeof(int));
-                setData.Columns.Add(dc);
-                dc = new DataColumn("NomDresseur", typeof(string));
-                setData.Columns.Add(dc);
-                dc = new DataColumn("Score", typeof(int));
-                setData.Columns.Add(dc);
                 foreach (Dresseur tmp in value)
                 {
                     DataRow dr = setData.NewRow();
@@ -237,11 +214,7 @@ namespace DataAccessLayer
                     dr[2] = tmp.Score;
                     ++i;
                 }
-
-                if (UpdateByCommandBuilder("SELECT * FROM DRESSEUR", new DataTable()) == 0)
-                {
-
-                }
+                UpdateByCommandBuilder("SELECT * FROM DRESSEUR", setData);
             }
         }
         public List<Dresseur> selectTable(List<Dresseur> value)
@@ -285,20 +258,10 @@ namespace DataAccessLayer
             set
             {
                 int i = 0;
+                DataTable setData = SelectByDataAdapter("SELECT * FROM MATCH;");
+                foreach (DataRow dr in setData.Rows)
+                    dr.Delete();
 
-                DataTable setData = new DataTable();
-                DataColumn dc = new DataColumn("IdMatch", typeof(int));
-                setData.Columns.Add(dc);
-                dc = new DataColumn("IdPokemonVainqueur", typeof(int));
-                setData.Columns.Add(dc);
-                dc = new DataColumn("IdPokemon1", typeof(int));
-                setData.Columns.Add(dc);
-                dc = new DataColumn("IdPokemon2", typeof(int));
-                setData.Columns.Add(dc);
-                dc = new DataColumn("IdStade", typeof(int));
-                setData.Columns.Add(dc);
-                dc = new DataColumn("IdTournoi", typeof(int));
-                setData.Columns.Add(dc);
                 foreach (Match tmp in value)
                 {
                     DataRow dr = setData.NewRow();
@@ -311,11 +274,7 @@ namespace DataAccessLayer
                     dr[6] = tmp.IdTournoi;
                     ++i;
                 }
-
-                if (UpdateByCommandBuilder("SELECT * FROM MATCH", new DataTable()) == 0)
-                {
-
-                }
+                UpdateByCommandBuilder("SELECT * FROM MATCH", setData);
             }
         }
         public List<Match> selectTable(List<Match> value)
@@ -360,24 +319,10 @@ namespace DataAccessLayer
             set
             {
                 int i = 0;
+                DataTable setData = SelectByDataAdapter("SELECT * FROM STADE;");
+                foreach (DataRow dr in setData.Rows)
+                    dr.Delete();
 
-                DataTable setData = new DataTable();
-                DataColumn dc = new DataColumn("IdStade", typeof(int));
-                setData.Columns.Add(dc);
-                dc = new DataColumn("NomStade", typeof(string));
-                setData.Columns.Add(dc);
-                dc = new DataColumn("NbPlaces", typeof(int));
-                setData.Columns.Add(dc);
-                dc = new DataColumn("Vie", typeof(int));
-                setData.Columns.Add(dc);
-                dc = new DataColumn("Force", typeof(int));
-                setData.Columns.Add(dc);
-                dc = new DataColumn("Agilite", typeof(int));
-                setData.Columns.Add(dc);
-                dc = new DataColumn("ENDURANCE", typeof(int));
-                setData.Columns.Add(dc);
-                dc = new DataColumn("VITESSE", typeof(int));
-                setData.Columns.Add(dc);
                 foreach (Stade tmp in value)
                 {
                     DataRow dr = setData.NewRow();
@@ -390,11 +335,7 @@ namespace DataAccessLayer
                     dr[6] = tmp.carac.Vitesse;
                     ++i;
                 }
-
-                if (UpdateByCommandBuilder("SELECT * FROM STADE", new DataTable()) == 0)
-                {
-
-                }
+                UpdateByCommandBuilder("SELECT * FROM STADE", setData);
             }
         }
         public List<Stade> selectTable(List<Stade> value)
@@ -442,13 +383,10 @@ namespace DataAccessLayer
             set
             {
                 int i = 0;
-                DataTable setData = new DataTable();
-                DataColumn dc = new DataColumn("IdTournoi", typeof(int));
-                setData.Columns.Add(dc);
-                dc = new DataColumn("NomTournoi", typeof(string));
-                setData.Columns.Add(dc);
-                dc = new DataColumn("NbMatchs", typeof(int));
-                setData.Columns.Add(dc);
+                DataTable setData = SelectByDataAdapter("SELECT * FROM TOURNOI;");
+                foreach (DataRow dr in setData.Rows)
+                    dr.Delete();
+
                 foreach (Tournoi tmp in value)
                 {
                     DataRow dr = setData.NewRow();
@@ -457,11 +395,7 @@ namespace DataAccessLayer
                     dr[2] = tmp.nbrMatch;
                     ++i;
                 }
-
-                if (UpdateByCommandBuilder("SELECT * FROM TOURNOI", new DataTable()) == 0)
-                {
-
-                }
+                UpdateByCommandBuilder("SELECT * FROM TOURNOI", setData);
             }
         }
         public List<Tournoi> selectTable(List<Tournoi> value)
@@ -505,17 +439,10 @@ namespace DataAccessLayer
             set
             {
                 int i = 0;
-                DataTable setData = new DataTable();
-                DataColumn dc = new DataColumn("IdUtilisateur", typeof(int));
-                setData.Columns.Add(dc);
-                dc = new DataColumn("NomUtilisateur", typeof(string));
-                setData.Columns.Add(dc);
-                dc = new DataColumn("PrenomUtilisateur", typeof(string));
-                setData.Columns.Add(dc);
-                dc = new DataColumn("LoginUtilisateur", typeof(string));
-                setData.Columns.Add(dc);
-                dc = new DataColumn("Password", typeof(string));
-                setData.Columns.Add(dc);
+                DataTable setData = SelectByDataAdapter("SELECT * FROM UTILISATEUR;");
+                foreach (DataRow dr in setData.Rows)
+                    dr.Delete();
+
                 foreach (Utilisateur tmp in value)
                 {
                     DataRow dr = setData.NewRow();
@@ -526,11 +453,7 @@ namespace DataAccessLayer
                     dr[4] = tmp.Password;
                     ++i;
                 }
-
-                if (UpdateByCommandBuilder("SELECT * FROM UTILISATEUR", new DataTable()) == 0)
-                {
-
-                }
+                UpdateByCommandBuilder("SELECT * FROM UTILISATEUR", setData);
             }
         }
         public List<Utilisateur> selectTable(List<Utilisateur> value)
