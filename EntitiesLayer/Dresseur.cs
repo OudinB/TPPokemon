@@ -13,7 +13,18 @@ namespace EntitiesLayer {
 			Nom = pnom;
 			Score = 0;
 		}
-		public override string ToString() {
+        public Dresseur(String pnom, int pScore)
+        {
+            Nom = pnom;
+            Score = pScore;
+        }
+        public Dresseur(int pID, String pnom, int pScore)
+        {
+            ID = pID;
+            Nom = pnom;
+            Score = pScore;
+        }
+        public override string ToString() {
 			return ("Dresseur " + Nom + " ; score : " + Score + " points");
 		}
 	}

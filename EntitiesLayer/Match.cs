@@ -11,19 +11,52 @@ namespace EntitiesLayer {
         public Pokemon Pokemon1 { get; }
         public Pokemon Pokemon2 { get; }
         public Stade Arene { get; }
+        public int IdTournoi { get; }
 
-        public Match(ref Pokemon ppokemon1, ref Pokemon ppokemon2, EPhaseTournoi pphase = EPhaseTournoi.QuartFinale) {
-			PhaseTournoi = pphase;
-			Pokemon1 = ppokemon1;
-			Pokemon2 = ppokemon2;
+        public Match(ref Pokemon ppokemon1, ref Pokemon ppokemon2, EPhaseTournoi pphase = EPhaseTournoi.QuartFinale)
+        {
+            PhaseTournoi = pphase;
+            Pokemon1 = ppokemon1;
+            Pokemon2 = ppokemon2;
             IdPokemonVainqueur = -1;
-
+            IdTournoi = -1;
         }
-		public Match(Pokemon ppokemon1, Pokemon ppokemon2, EPhaseTournoi pphase = EPhaseTournoi.QuartFinale) {
-			PhaseTournoi = pphase;
+        public Match(Pokemon ppokemon1, Pokemon ppokemon2, EPhaseTournoi pphase = EPhaseTournoi.QuartFinale)
+        {
+            PhaseTournoi = pphase;
+            Pokemon1 = ppokemon1;
+            Pokemon2 = ppokemon2;
+            IdPokemonVainqueur = -1;
+            IdTournoi = -1;
+        }
+        public Match(int pId, ref Pokemon ppokemon1, ref Pokemon ppokemon2, Stade pArene, int pIdTournoi, EPhaseTournoi pphase = EPhaseTournoi.QuartFinale) {
+            ID = pId;
+            PhaseTournoi = pphase;
 			Pokemon1 = ppokemon1;
 			Pokemon2 = ppokemon2;
+            Arene = pArene;
             IdPokemonVainqueur = -1;
+            IdTournoi = pIdTournoi;
+        }
+		public Match(int pId, Pokemon ppokemon1, Pokemon ppokemon2,  Stade pArene, int pIdTournoi, EPhaseTournoi pphase = EPhaseTournoi.QuartFinale) {
+            ID = pId;
+            PhaseTournoi = pphase;
+			Pokemon1 = ppokemon1;
+			Pokemon2 = ppokemon2;
+            Arene = pArene;
+            IdPokemonVainqueur = -1;
+            IdTournoi = pIdTournoi;
+        }
+        public Match(int pId, int idPokeVainq, Pokemon ppokemon1, Pokemon ppokemon2, Stade pArene, int pIdTournoi, EPhaseTournoi pphase = EPhaseTournoi.QuartFinale)
+        {
+            ID = pId;
+            IdPokemonVainqueur = idPokeVainq;
+            PhaseTournoi = pphase;
+            Pokemon1 = ppokemon1;
+            Pokemon2 = ppokemon2;
+            Arene = pArene;
+            IdPokemonVainqueur = -1;
+            IdTournoi = pIdTournoi;
         }
 
         public EPhaseTournoi Phase_next()

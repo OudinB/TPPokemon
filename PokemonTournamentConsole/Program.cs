@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using DataAccessLayer;
 using EntitiesLayer;
 
 namespace PokemonTournamentConsole {
@@ -32,8 +32,17 @@ namespace PokemonTournamentConsole {
 			Dresseur dresseur2 = new Dresseur("Ondine");
 			Console.WriteLine(dresseur1);
 			Console.WriteLine(dresseur2);
+            
+            DataManager b = DataManager.Instance;
+            Console.WriteLine(b.ToString());
 
-			Console.ReadKey();
+            b.LsPokemon.Add(new Pokemon(b.idMax(b.LsPokemon)+1, "Mew", ETypeElement.Psy, 100, 10, 10000, 20, 10000));
+            Console.WriteLine(b.ToString());
+
+            b.updateTable(b.LsPokemon);
+            b.ToXML("C:\\Users\\Benjamin\\git\\TPPokemon\\toto.xml");
+
+            Console.ReadKey();
 		}
 	}
 }

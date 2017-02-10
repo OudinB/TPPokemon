@@ -5,14 +5,14 @@ using System.Text;
 using System.Threading.Tasks;
 
 using EntitiesLayer;
-using StubDataAccessLayer;
+using DataAccessLayer;
 
 namespace BusinessLayer
 {
     public class BusinessManager
     {
-        static private DalManager Manager = new DalManager();
-
+        static private DataManager Manager = DataManager.Instance;
+        
         public BusinessManager() {
         }
 
@@ -63,7 +63,7 @@ namespace BusinessLayer
             bool verif=false;
             try
             {
-                Utilisateur user = Manager.GetUtilisateurByLogin(login);
+                Utilisateur user = Manager.getUtilisateurByLogin(login);
                 if (user != null)
                 {
                     if (user.getPassword() == password)
